@@ -1,0 +1,63 @@
+[x-cloak] { display: none !important; }
+        :root { color-scheme: dark; }
+        body {
+            background:
+                radial-gradient(circle at 50% -10%, rgba(180, 83, 9, 0.32), transparent 32%),
+                linear-gradient(180deg, #050508 0%, #090910 100%);
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image:
+                radial-gradient(circle at 20% 20%, #ffffff 0.6px, transparent 0.8px),
+                radial-gradient(circle at 80% 60%, #ffffff 0.5px, transparent 0.8px),
+                radial-gradient(circle at 40% 80%, #ffffff 0.7px, transparent 1px);
+            background-size: 180px 180px, 220px 220px, 260px 260px;
+            mix-blend-mode: soft-light;
+        }
+        .alert-glass {
+            background: rgba(142, 255, 177, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        }
+        .smoked-glass {
+            background: rgba(18, 18, 26, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        }
+        .locked-glass {
+            background: rgba(255, 0, 0, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        }
+        .unlocked-glass {
+            background: rgba(106, 212, 0, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        }
+        .meta-label {
+            font-family: "JetBrains Mono", monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .interactive-glow:hover {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+        }
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }

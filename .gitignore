@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Virtual environment
+venv/
+.env/
+.env
+
+# Flask
+instance/
+.webassets-cache
+
+# Environment variables (IMPORTANT for OAuth secrets)
+.env
+*.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node / Tailwind
+node_modules/
+package-lock.json
+
+# Build output (Tailwind)
+dist/
+build/
+
+# VS Code / IDE
+.vscode/
+.idea/

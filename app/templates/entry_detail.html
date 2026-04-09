@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ entry.title }} | Time Capsule Journal{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-3xl">
+    <div class="smoked-glass rounded-[24px] p-6 sm:p-8">
+        <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+                <p class="meta-label text-xs text-slate-500">Unlocked capsule</p>
+                <h1 class="mt-3 font-display text-4xl text-white sm:text-5xl">{{ entry.title }}</h1>
+                <p class="mt-4 text-sm text-slate-400">
+                    Written {{ entry.written_at_dt.strftime('%b %d, %Y') }} • Unlocked {{ entry.unlock_at_dt.strftime('%b %d, %Y') }}
+                </p>
+            </div>
+            <a href="{{ url_for('main.dashboard') }}" class="interactive-glow inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
+                Back to dashboard
+            </a>
+        </div>
+        <article class="prose prose-lg max-w-none prose-invert prose-p:text-slate-200 prose-headings:text-white">
+            {{ entry.content | replace('\n', '<br>') | safe }}
+        </article>
+    </div>
+</section>
+{% endblock %}

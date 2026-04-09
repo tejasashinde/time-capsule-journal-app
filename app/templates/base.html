@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="h-full dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Time Capsule Journal{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='dist/app.js', v='20260409-1112') }}"></script>
+</head>
+<body class="min-h-full bg-obsidian font-body text-slate-100 antialiased">
+    <div class="relative mx-auto min-h-screen max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <header class="mb-8 flex flex-col gap-4 pt-4 sm:flex-row sm:items-center sm:justify-between lg:mb-16">
+            <div class="min-w-0">
+                <a href="/" class="flex items-center font-display text-4xl font-semibold tracking-tight text-amber-400 space-x-3">
+                    <img src="{{ url_for('static', filename='icon1.png') }}" alt="icon" width="30%">
+                </a>
+                <p class="text-slate-400">Send a message to your future self.</p>
+            </div>
+            <div class="flex flex-shrink-0 items-center gap-3 self-end sm:self-auto">
+                {% if current_user %}
+                    <a href="{{ url_for('main.create_page') }}" class="interactive-glow hidden min-w-[9.5rem] flex-shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:bg-white/10 sm:inline-flex">
+                        Create&nbsp;Capsule
+                    </a>
+                    <a href="{{ url_for('auth.logout') }}" class="interactive-glow inline-flex min-w-[7.5rem] flex-shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-slate-200 transition hover:bg-white/10">
+                        Sign&nbsp;out
+                    </a>
+                {% endif %}
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mb-6 space-y-3">
+                    {% for category, message in messages %}
+                        <div class="alert-glass rounded-[24px] px-5 py-4 text-sm">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

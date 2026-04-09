@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "alpinejs": "^3.15.11",
+    "esbuild": "^0.28.0",
+    "tailwindcss": "^4.2.2"
+  },
+  "name": "time-capsule-journal",
+  "version": "1.0.0",
+  "description": "A Flask web app for writing journal entries to your future self. Users authenticate with Google OAuth, create locked capsules with an unlock date, and read entries only after the chosen date arrives.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:js": "esbuild app/static/src/app.js --bundle --minify --outfile=./app/static/dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
